@@ -16,16 +16,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn2 = findViewById(R.id.button2);
-        MyListener m = new MyListener();
-        btn2.setOnClickListener(m);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Click Click", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-    class MyListener implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "Click Click", Toast.LENGTH_SHORT).show();
-        }
-    }
+
     public void click1(View v)
     {
         TextView tv = findViewById(R.id.textView);
